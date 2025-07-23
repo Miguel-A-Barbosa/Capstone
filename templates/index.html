@@ -1,0 +1,119 @@
+<!DOCTYPE html>
+<html lang="es">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Regresión Lineal</title>
+    <link rel="stylesheet" href="{{url_for('static', filename='style.css')}}" />
+  </head>
+
+  <body>
+    <div class="left"></div>
+    <div class="right">
+      <h1 id="titulo">PREDICTOR DE COSTOS DE SALUD</h1>
+      <p id="subtitulo">Completa tus datos médicos</p>
+      <form id="formulario">
+        <div class="form-group">
+          <label for="edad">Edad</label>
+          <input
+            type="number"
+            id="edad"
+            name="edad"
+            placeholder="Ingresa tu edad"
+            min="1"
+            required
+          />
+          <span class="checkmark">✔️</span>
+        </div>
+
+        <div class="form-group">
+          <label for="genero">Género</label>
+          <select id="genero" name="genero" required>
+            <option value="">Seleccione</option>
+            <option value="Femenino">Femenino</option>
+            <option value="Masculino">Masculino</option>
+          </select>
+          <span class="checkmark">✔️</span>
+        </div>
+
+        <div class="form-group">
+          <label for="hijos">Hijos</label>
+          <input
+            type="number"
+            id="hijos"
+            name="hijos"
+            placeholder="Número de hijos"
+            min="0"
+            required
+          />
+          <span class="checkmark">✔️</span>
+        </div>
+
+        <div class="form-group">
+          <label for="region">Región</label>
+          <select id="region" name="region" required>
+            <option value="">Seleccione</option>
+            <option value="Noroeste">Noroeste</option>
+            <option value="Noreste">Noreste</option>
+            <option value="Suroeste">Suroeste</option>
+            <option value="Sureste">Sureste</option>
+          </select>
+          <span class="checkmark">✔️</span>
+        </div>
+
+        <div class="form-group">
+          <label for="peso">Peso (kg)</label>
+          <input
+            type="number"
+            id="peso"
+            name="peso"
+            placeholder="Ej. 65"
+            min="1"
+            required
+          />
+          <span class="checkmark">✔️</span>
+        </div>
+
+        <div class="form-group">
+          <label for="estatura">Estatura (cm)</label>
+          <input
+            type="number"
+            id="estatura"
+            name="estatura"
+            placeholder="Ej. 170"
+            min="1"
+            required
+          />
+          <span class="checkmark">✔️</span>
+        </div>
+
+        <div class="form-group">
+          <label for="fumador">Fumador</label>
+          <select id="fumador" name="fumador" required>
+            <option value="">Seleccione</option>
+            <option value="Si">Sí</option>
+            <option value="No">No</option>
+          </select>
+          <span class="checkmark">✔️</span>
+        </div>
+
+        <button type="submit" id="btnPredecir" disabled>
+          <strong>Predecir</strong>
+        </button>
+      </form>
+
+      <div id="bloque-resultado" style="display: none; margin-top: 75px">
+        <div
+          id="resultado"
+          class="resultado-container"
+          style="padding-right: 140px"
+        ></div>
+        <button id="btnOtraPrediccion" style="margin-top: 90px">
+          Hacer otra predicción
+        </button>
+      </div>
+    </div>
+
+    <script src="{{url_for('static', filename='script.js')}}"></script>
+  </body>
+</html>

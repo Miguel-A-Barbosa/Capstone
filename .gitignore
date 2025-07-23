@@ -1,0 +1,11 @@
+venv/
+__pycache__/
+*.py[cod]
+*.pyo
+.DS_Store
+Thumbs.db
+*.env
+*.local
+.env.*
+*.log
+pip-log.txt
